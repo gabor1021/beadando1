@@ -163,18 +163,15 @@ class Masik_kontinens_varos(Europai_varos):
 def feltolt():
     for i in beolvas():
         if i[0] == "Pécs":
-            globals()[i[0]] = Varos(f"{i[0]}", i[3], i[4], i[5], vehicle.start.value)
+            globals()[i[0]] = Varos(i[0], i[3], i[4], i[5], vehicle.start.value)
         elif i[0] == "Budapest":
-            globals()[i[0]] = Varos(f"{i[0]}", i[3], i[4], i[5], vehicle.car.value)
+            globals()[i[0]] = Varos(i[0], i[3], i[4], i[5], vehicle.car.value)
         elif i[0] == "Bécs":
-            globals()[i[0]] = Europai_varos(f"{i[0]}", f"{i[1]}", i[3], i[4], i[5],
-                                            vehicle.car.value)
+            globals()[i[0]] = Europai_varos(i[0], i[1], i[3], i[4], i[5], vehicle.car.value)
         elif i[2] == "-":
-            globals()[i[0]] = Europai_varos(f"{i[0]}", f"{i[1]}", i[3], i[4], i[5],
-                                            vehicle.car_or_plane.value)
+            globals()[i[0]] = Europai_varos(i[0], i[1], i[3], i[4], i[5], vehicle.car_or_plane.value)
         else:
-            globals()[i[0]] = Masik_kontinens_varos(f"{i[0]}", f"{i[1]}", f"{i[2]}", i[3], i[4], i[5],
-                                                    vehicle.plane.value)
+            globals()[i[0]] = Masik_kontinens_varos(i[0], i[1], i[2], i[3], i[4], i[5], vehicle.plane.value)
 
 
 def beker():
